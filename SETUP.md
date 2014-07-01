@@ -36,8 +36,8 @@ another folder where you'll keep your projects. Feel free to configure
 all this to suit your tastes and existing setup.
 
 This is what the target setup will look like, assuming that the OpenUI5
-folder that we're talking about will be in your home folder, as will
-the projects folder:
+folder that we're talking about will be in your home folder, and the
+projects folder will be inside that.
 
 ```
 <home>
