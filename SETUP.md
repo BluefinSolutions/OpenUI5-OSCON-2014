@@ -60,7 +60,9 @@ projects folder will be inside that.
 
 ### 1. Clone this repo
 
-Clone this repo to your home folder. You should see only the following:
+Clone [this repo](https://github.com/BluefinSolutions/OpenUI5-OSCON-2014/)
+to your home folder. You should see only the following
+(and projects/ will be an empty folder, save for a .gitignore file in it):
 
 ```
 <home>
@@ -111,8 +113,8 @@ this:
 
 ### 3. Create a symbolic link for "latest"
 
-Navigate to the OpenUI5-OSCON-2014/ folder and create a symlink 'latest' to
-point to the latest (currently the only) SDK folder. On OSX and Linux
+In the OpenUI5-OSCON-2014/ folder create a symlink "latest" to
+point to the latest (initially it will be the only) SDK folder. On OSX and Linux
 this would be:
 
 `ln -s openui5-sdk-1.20.9/ latest`
@@ -144,6 +146,9 @@ While in the OpenUI5-OSCON-2014/ folder, install the modules like
 this:
 
 `npm install`
+
+This will perform an install local to this folder (rather than a global install),
+creating a `node_modules` folder in the process.
 
 ### 5. Start up the server
 
