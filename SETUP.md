@@ -44,6 +44,7 @@ the projects folder:
   |
   +-- OpenUI5-OSCON-2014/
         |
+        +-- package.json
         +-- static_server.js
         |
         +-- latest/               // symlink to openui5-sdk-1.20.9/
@@ -66,6 +67,7 @@ Clone this repo to your home folder. You should see only the following:
   |
   +-- OpenUI5-OSCON-2014/
         |
+        +-- package.json
         +-- static_server.js
         |
         +-- projects/
@@ -85,6 +87,7 @@ this:
   |
   +-- OpenUI5-OSCON-2014/
         |
+        +-- package.json
         +-- static_server.js
         |
         +-- openui5-sdk-1.20.9/
@@ -106,7 +109,7 @@ this:
 ```
 (From now on the contents of the openui5 SDK folder won't be shown).
 
-### Create a symbolic link for "latest"
+### 3. Create a symbolic link for "latest"
 
 Navigate to the OpenUI5-OSCON-2014/ folder and create a symlink 'latest' to
 point to the latest (currently the only) SDK folder. On OSX and Linux
@@ -121,6 +124,7 @@ At this stage you should have:
   |
   +-- OpenUI5-OSCON-2014/
         |
+        +-- package.json
         +-- static_server.js
         |
         +-- latest/   ---------------+
@@ -130,7 +134,18 @@ At this stage you should have:
         +-- projects/
 ```
 
-### Start up the server
+### 4. Install required modules
+
+This is where the `package.json` comes in. The simple web server
+`static_server.js` uses a couple of NodeJS modules. These are declared
+in `package.json`.
+
+While in the OpenUI5-OSCON-2014/ folder, install the modules like
+this:
+
+`npm install`
+
+### 5. Start up the server
 
 While still in the OpenUI5-OSCON-2014/ folder, start up the web
 server like this:
