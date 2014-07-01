@@ -5,7 +5,7 @@ var express = require('express'),
 	app = express(),
 	port = process.env.PORT || 8888,
 	openui5 = '/openui5'
-	url = 'http://localhost:' + port + openui5,// + "/latest";
+	url = 'http://localhost:' + port + openui5 + "/latest";
 	year = 60 * 60 * 24 * 365 * 1000;
 
 // Use compress middleware to gzip content
@@ -20,5 +20,5 @@ app.use(openui5,express.static(__dirname, { maxAge: year, hidden: true }));
 app.use(openui5,express.directory(__dirname));
 
 app.listen(port);
-open("http://localhost:8888/openui5/latest"); //open in default browser
-console.log("Static file server running at\n  => " + url + " \nCTRL + C to shutdown");
+open(url);
+console.log("Static file server running\nCTRL + C to shutdown");
