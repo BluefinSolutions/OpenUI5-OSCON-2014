@@ -1,0 +1,68 @@
+<core:View
+	controllerName="oscon2014.repoexplorer.view.Master"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>MasterTitle}" >
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<SearchField
+						search="handleSearch"
+						width="100%" >
+					</SearchField>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<List
+			id="list"
+			mode="{device>/listMode}"
+			select="handleListSelect"
+			items="{/SalesOrderCollection}" >
+			<ObjectListItem
+				type="{device>/listItemType}"
+				press="handleListItemPress"
+				title="{SoId}"
+				number="{GrossAmount}"
+				numberUnit="{CurrencyCode}" >
+				<attributes>
+					<ObjectAttribute text="{BuyerName}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'LifecycleStatus',
+							formatter: 'oscon2014.repoexplorer.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'LifecycleStatus',
+							formatter: 'oscon2014.repoexplorer.util.Formatter.statusState'
+						}" />
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Select
+						id="groupSelect"
+						change="handleGroup"
+						icon="sap-icon://group-2"
+						type="IconOnly"
+						selectedKey="None"
+						autoAdjustWidth="true" >
+						<core:Item
+							key="None"
+							text="{i18n>MasterGroupNone}"/>
+						<core:Item
+							key="GrossAmount"
+							text="{i18n>MasterGroupAmount}"/>
+						<core:Item
+							key="LifecycleStatus"
+							text="{i18n>MasterGroupStatus}"/>
+					</Select>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
