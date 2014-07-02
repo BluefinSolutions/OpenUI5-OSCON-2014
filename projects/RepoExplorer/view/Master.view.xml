@@ -20,24 +20,22 @@
 			select="handleListSelect"
 			items="{/repos}" >
 			<ObjectListItem
+				icon="sap-icon://detail-view"
 				type="{device>/listItemType}"
 				press="handleListItemPress"
 				title="{name}"
-				number="{GrossAmount}"
-				numberUnit="{CurrencyCode}" >
+				number="{stargazers_count}"
+				numberUnit="Starred">
 				<attributes>
-					<ObjectAttribute text="{BuyerName}" />
+					<ObjectAttribute
+						text="Updated {
+							path: 'updated_at',
+							formatter: 'oscon2014.repoexplorer.util.Formatter.fromNow'
+						}" />
 				</attributes>
 				<firstStatus>
 					<ObjectStatus
-						text="{
-							path: 'LifecycleStatus',
-							formatter: 'oscon2014.repoexplorer.util.Formatter.statusText'
-						}"
-						state="{
-							path: 'LifecycleStatus',
-							formatter: 'oscon2014.repoexplorer.util.Formatter.statusState'
-						}" />
+						text="{language}" />
 				</firstStatus>
 			</ObjectListItem>
 		</List>

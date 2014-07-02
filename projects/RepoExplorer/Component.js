@@ -19,9 +19,10 @@ sap.ui.core.UIComponent.extend("oscon2014.repoexplorer.Component", {
 		oView.setModel(i18nModel, "i18n");
 
 		var sGithubUser = "SAP";
-		var sReposURL = "https://api.github.com/users/" + sGithubUser + "/repos";
+		// var sReposURL = "https://api.github.com/users/" + sGithubUser + "/repos";
+		var sReposURL = "model/repos-" + sGithubUser + ".json";
 		var oModel = new sap.ui.model.json.JSONModel(sReposURL);
-    oModel.attachEventOnce('requestCompleted', function(oEvent) {
+    oModel.attachEvent('requestCompleted', function(oEvent) {
       var oModel = oEvent.getSource();
       oModel.setData({
         repos : oModel.getData()

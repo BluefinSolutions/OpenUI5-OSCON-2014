@@ -3,7 +3,12 @@ jQuery.sap.declare("oscon2014.repoexplorer.util.Formatter");
 jQuery.sap.require("sap.ui.core.format.DateFormat");
 
 oscon2014.repoexplorer.util.Formatter = {
-	
+
+	fromNow : function (date) {
+		var oDate = new Date(date);
+		return (oDate !== "Invalid Date") ? moment(oDate).fromNow() : date;
+	},
+
 	_statusStateMap : {
 		"P" : "Success",
 		"N" : "Warning"
@@ -13,21 +18,21 @@ oscon2014.repoexplorer.util.Formatter = {
 		var bundle = this.getModel("i18n").getResourceBundle();
 		return bundle.getText("StatusText" + value, "?");
 	},
-	
+
 	statusState :  function (value) {
 		var map = oscon2014.repoexplorer.util.Formatter._statusStateMap;
 		return (value && map[value]) ? map[value] : "None";
 	},
-	
+
 	date : function (value) {
 		if (value) {
-			var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({pattern: "yyyy-MM-dd"}); 
+			var oDateFormat = sap.ui.core.format.DateFormat.getDateTimeInstance({pattern: "yyyy-MM-dd"});
 			return oDateFormat.format(new Date(value));
 		} else {
 			return value;
 		}
 	},
-	
+
 	quantity :  function (value) {
 		try {
 			return (value) ? parseFloat(value).toFixed(0) : value;
