@@ -18,11 +18,11 @@
 			id="list"
 			mode="{device>/listMode}"
 			select="handleListSelect"
-			items="{/SalesOrderCollection}" >
+			items="{/repos}" >
 			<ObjectListItem
 				type="{device>/listItemType}"
 				press="handleListItemPress"
-				title="{SoId}"
+				title="{name}"
 				number="{GrossAmount}"
 				numberUnit="{CurrencyCode}" >
 				<attributes>
