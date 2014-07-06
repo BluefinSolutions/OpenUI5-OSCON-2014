@@ -5,7 +5,9 @@ var express = require('express'),
 	app = express(),
 	port = process.env.PORT || 8888,
 	openui5 = '/openui5'
-	url = 'http://localhost:' + port + openui5 + "/latest";
+	start = '/projects/OSCON-2014';
+	sdk = '/openui5-sdk';
+	url = 'http://localhost:' + port + openui5 + sdk;
 	year = 60 * 60 * 24 * 365 * 1000;
 
 // Use compress middleware to gzip content

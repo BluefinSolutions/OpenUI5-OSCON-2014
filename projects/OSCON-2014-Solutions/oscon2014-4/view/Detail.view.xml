@@ -1,0 +1,34 @@
+<core:View
+	controllerName="oscon2014.view.Detail"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>DetailTitle}"
+		showNavButton="true"
+		navButtonPress="handleNavButtonPress" >
+		<ObjectHeader
+			title="{SoId}"
+			number="{GrossAmount}"
+			numberUnit="{CurrencyCode}" >
+			<attributes>
+				<ObjectAttribute text="{BuyerName}" />
+				<ObjectAttribute text="{CreatedByBp}" />
+				<ObjectAttribute text="{
+					path: 'CreatedAt',
+					formatter: 'oscon2014.util.Formatter.date'
+				}" />
+			</attributes>
+			<firstStatus>
+				<ObjectStatus
+					text="{
+						path: 'LifecycleStatus',
+						formatter: 'oscon2014.util.Formatter.statusText'
+					}"
+					state="{
+						path: 'LifecycleStatus',
+						formatter: 'oscon2014.util.Formatter.statusState'
+					}" />
+			</firstStatus>
+		</ObjectHeader>
+	</Page>
+</core:View>

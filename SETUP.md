@@ -47,9 +47,7 @@ projects folder will be inside that.
         +-- package.json
         +-- static_server.js
         |
-        +-- latest/               // symlink to openui5-sdk-1.20.9/
-        +-- openui5-sdk-1.20.9/   // unpacked OpenUI5 SDK 1.20.9
-        +-- openui5-sdk-1.20.8/   // unpacked OpenUI5 SDK 1.20.8
+        +-- openui5-sdk/          // unpacked OpenUI5 SDK
         |
         +-- projects/             // where your OpenUI5 projects go
               |
@@ -80,7 +78,7 @@ to your home folder. You should see only the following
 From the [OpenUI5 download page](http://openui5.org/download.html), retrieve the
 latest SDK (make sure it's the "UI5 SDK" and not just the runtime).
 
-Create a new folder named after the specific release (e.g. "openui5-sdk-1.20.9/")
+Create a new folder named after the specific release (e.g. "openui5-sdk/")
 and unpack the contents of the SDK into it. You should end up with something like
 this:
 
@@ -92,7 +90,7 @@ this:
         +-- package.json
         +-- static_server.js
         |
-        +-- openui5-sdk-1.20.9/
+        +-- openui5-sdk/
         |     |
         |     +-- LICENCE.txt
         |     +-- NOTICE.txt
@@ -111,32 +109,7 @@ this:
 ```
 (From now on the contents of the openui5 SDK folder won't be shown).
 
-### 3. Create a symbolic link for "latest"
-
-In the OpenUI5-OSCON-2014/ folder create a symlink "latest" to
-point to the latest (initially it will be the only) SDK folder. On OSX and Linux
-this would be:
-
-`ln -s openui5-sdk-1.20.9/ latest`
-
-At this stage you should have:
-
-```
-<home>
-  |
-  +-- OpenUI5-OSCON-2014/
-        |
-        +-- package.json
-        +-- static_server.js
-        |
-        +-- latest/   ---------------+
-        |                            | symlinked
-        +-- openui5-sdk-1.20.9/   <--+
-        |
-        +-- projects/
-```
-
-### 4. Install required modules
+### 3. Install required modules
 
 This is where the `package.json` comes in. The simple web server
 `static_server.js` uses a couple of NodeJS modules. These are declared

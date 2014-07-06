@@ -1,0 +1,16 @@
+<core:View
+	controllerName="oscon2014.view.Detail"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>DetailTitle}"
+		showNavButton="true"
+		navButtonPress="handleNavButtonPress" >
+		<VBox>
+			<Text text="{SoId}" />
+			<Text text="{GrossAmount}" />
+			<Text text="{CreatedAt}" />
+			<Text text="{CreatedByBp}" />
+		</VBox>
+	</Page>
+</core:View>

@@ -1,0 +1,43 @@
+<core:View
+	controllerName="oscon2014.view.Master"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>MasterTitle}" >
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<SearchField
+						search="handleSearch"
+						width="100%" >
+					</SearchField>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<List
+			id="list"
+			items="{/SalesOrderCollection}" >
+			<ObjectListItem
+				type="Active"
+				press="handleListItemPress"
+				title="{SoId}"
+				number="{GrossAmount}"
+				numberUnit="{CurrencyCode}" >
+				<attributes>
+					<ObjectAttribute text="{BuyerName}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'LifecycleStatus',
+							formatter: 'oscon2014.util.Formatter.statusText'
+						}"
+						state="{
+							path: 'LifecycleStatus',
+							formatter: 'oscon2014.util.Formatter.statusState'
+						}" />
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+	</Page>
+</core:View>
