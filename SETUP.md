@@ -60,7 +60,7 @@ projects folder will be inside that.
 
 Clone [this repo](https://github.com/BluefinSolutions/OpenUI5-OSCON-2014/)
 to your home folder. You should see only the following
-(and projects/ will be an empty folder, save for a .gitignore file in it):
+(and `projects/` will be an empty folder, save for a `.gitignore` file in it):
 
 ```
 <home>
@@ -78,7 +78,7 @@ to your home folder. You should see only the following
 From the [OpenUI5 download page](http://openui5.org/download.html), retrieve the
 latest SDK (make sure it's the "UI5 SDK" and not just the runtime).
 
-Create a new folder named after the specific release (e.g. "openui5-sdk/")
+Create a new folder named `openui5-sdk/`
 and unpack the contents of the SDK into it. You should end up with something like
 this:
 
@@ -107,7 +107,7 @@ this:
         |
         +-- projects/
 ```
-(From now on the contents of the openui5 SDK folder won't be shown).
+(From now on the contents of the `openui5-sdk/` folder won't be shown).
 
 ### 3. Install required modules
 
@@ -115,17 +115,17 @@ This is where the `package.json` comes in. The simple web server
 `static_server.js` uses a couple of NodeJS modules. These are declared
 in `package.json`.
 
-While in the OpenUI5-OSCON-2014/ folder, install the modules like
+While in the `OpenUI5-OSCON-2014/` folder, install the modules like
 this:
 
 `npm install`
 
 This will perform an install local to this folder (rather than a global install),
-creating a `node_modules` folder in the process.
+creating a `node_modules/` folder in the process.
 
 ### 5. Start up the server
 
-While still in the OpenUI5-OSCON-2014/ folder, start up the web
+While still in the `OpenUI5-OSCON-2014/` folder, start up the web
 server like this:
 
 `node ./static_server.js`
