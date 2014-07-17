@@ -31,7 +31,7 @@ with that situation anyway as you pull down the latest releases as
 they become available.
 
 The simple web server script will serve the OpenUI5 SDK documentation
-as well as the OpenUI5 runtime, and we'll also configure it to server
+as well as the OpenUI5 runtime, and we'll also configure it to serve
 another folder where you'll keep your projects. Feel free to configure
 all this to suit your tastes and existing setup.
 
@@ -59,7 +59,7 @@ projects folder will be inside that.
 ### 1. Clone this repo
 
 Clone [this repo](https://github.com/BluefinSolutions/OpenUI5-OSCON-2014/)
-to your home folder. You should see only the following
+to your home folder, or just use the "Download ZIP" button on the repository page and extract the folder (make sure to remove the "-master" appended at the end of the folder name). You should see the following
 (and `projects/` will be an empty folder, save for a `.gitignore` file in it):
 
 ```
@@ -76,7 +76,7 @@ to your home folder. You should see only the following
 ### 2. Download and unpack the latest OpenUI5 SDK
 
 From the [OpenUI5 download page](http://openui5.org/download.html), retrieve the
-latest SDK (make sure it's the "UI5 SDK" and not just the runtime).
+latest SDK (version 1.22.4, make sure it's the "UI5 SDK" and not just the runtime).
 
 Create a new folder named `openui5-sdk/`
 and unpack the contents of the SDK into it. You should end up with something like
@@ -115,13 +115,19 @@ This is where the `package.json` comes in. The simple web server
 `static_server.js` uses a couple of NodeJS modules. These are declared
 in `package.json`.
 
-While in the `OpenUI5-OSCON-2014/` folder, install the modules like
+While in the `OpenUI5-OSCON-2014/` folder with a console window, install the modules like
 this:
 
 `npm install`
 
 This will perform an install local to this folder (rather than a global install),
 creating a `node_modules/` folder in the process.
+
+When behind a proxy, npm will complain and you have to configure the proxy first, like
+```
+npm config set proxy http://proxy:8080
+npm config set https-proxy http://proxy:8080
+```
 
 ### 5. Start up the server
 
@@ -132,3 +138,5 @@ server like this:
 
 and your browser should open showing your local OpenUI5 SDK. You're
 all set!
+
+Now you can jump right into the tutorial, which is located inside the repository in `projects/OSCON-2014-Solutions/OSCON2014-Exercises.docx`
