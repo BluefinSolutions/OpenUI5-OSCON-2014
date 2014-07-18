@@ -1,0 +1,112 @@
+<core:View
+	controllerName="oscon2014.view.Detail"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>DetailTitle}"
+		class="sapUiFioriObjectPage"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavButtonPress" >
+		<ObjectHeader
+			title="{SoId}"
+			number="{GrossAmount}"
+			numberUnit="{CurrencyCode}" >
+			<attributes>
+				<ObjectAttribute text="{BuyerName}" />
+				<ObjectAttribute text="{CreatedByBp}" />
+				<ObjectAttribute text="{
+					path: 'CreatedAt',
+					formatter: 'oscon2014.util.Formatter.date'
+				}" />
+			</attributes>
+			<firstStatus>
+				<ObjectStatus
+					text="{
+						path: 'LifecycleStatus',
+						formatter: 'oscon2014.util.Formatter.statusText'
+					}"
+					state="{
+						path: 'LifecycleStatus',
+						formatter: 'oscon2014.util.Formatter.statusState'
+					}" />
+			</firstStatus>
+		</ObjectHeader>
+		<IconTabBar
+			expanded="{device>/isNoPhone}" >
+			<items>
+				<IconTabFilter
+					icon="sap-icon://supplier">
+					<form:SimpleForm
+						id="SupplierForm"
+						minWidth="1024" >
+						<core:Title text="{i18n>PartnerAddress}" />
+						<Label text="{i18n>PartnerName}"/>
+						<Text text="{CompanyName}" />
+						<Label text="{i18n>PartnerCity}"/>
+						<Text text="{City}, {PostalCode}" />
+						<Label text="{i18n>PartnerStreet}"/>
+						<Text text="{Street}" />
+					</form:SimpleForm>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+		<Table
+			headerText="{i18n>LineItemTableHeader}"
+			items="{LineItems}" >
+			<columns>
+				<Column>
+					<header><Label text="{i18n>LineItemTitle}" /></header>
+				</Column>
+				<Column
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="{i18n>LineItemDate}" /></header>
+				</Column>
+				<Column
+					minScreenWidth="Tablet"
+					demandPopin="true"
+					hAlign="Center" >
+					<header><Label text="{i18n>LineItemQuantity}" /></header>
+				</Column>
+				<Column
+					hAlign="Right" >
+					<header><Label text="{i18n>LineItemPrice}" /></header>
+				</Column>
+			</columns>
+			<ColumnListItem
+				type="Navigation"
+				press="handleLineItemPress" >
+				<cells>
+					<ObjectIdentifier
+						title="{ProductId}" />
+					<Text
+						text="{
+							path:'DeliveryDate',
+							formatter:'oscon2014.util.Formatter.date'
+						}"/>
+					<Text
+						text="{
+							path:'Quantity',
+							formatter:'oscon2014.util.Formatter.quantity'
+						}"/>
+					<ObjectNumber
+						number="{GrossAmount}"
+						numberUnit="{CurrencyCode}" />
+				</cells>
+			</ColumnListItem>
+		</Table>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button
+						text="{i18n>ApproveButtonText}"
+						type="Accept"
+						icon="sap-icon://accept"
+						press="handleApprove" />
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>
