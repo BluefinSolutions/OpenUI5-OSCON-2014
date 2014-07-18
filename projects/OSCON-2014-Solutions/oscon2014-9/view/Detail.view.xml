@@ -40,12 +40,12 @@
 					<form:SimpleForm
 						id="SupplierForm"
 						minWidth="1024" >
-						<core:Title text="Address" />
-						<Label text="Name"/>
+						<core:Title text="{i18n>PartnerAddress}" />
+						<Label text="{i18n>PartnerName}"/>
 						<Text text="{CompanyName}" />
-						<Label text="City"/>
+						<Label text="{i18n>PartnerCity}"/>
 						<Text text="{City}, {PostalCode}" />
-						<Label text="Street"/>
+						<Label text="{i18n>PartnerStreet}"/>
 						<Text text="{Street}" />
 					</form:SimpleForm>
 				</IconTabFilter>
@@ -56,23 +56,23 @@
 			items="{LineItems}" >
 			<columns>
 				<Column>
-					<header><Label text="Product" /></header>
+					<header><Label text="{i18n>LineItemTitle}" /></header>
 				</Column>
 				<Column
 					minScreenWidth="Tablet"
 					demandPopin="true"
 					hAlign="Center" >
-					<header><Label text="Delivery Date" /></header>
+					<header><Label text="{i18n>LineItemDate}" /></header>
 				</Column>
 				<Column
 					minScreenWidth="Tablet"
 					demandPopin="true"
 					hAlign="Center" >
-					<header><Label text="Quantity" /></header>
+					<header><Label text="{i18n>LineItemQuantity}" /></header>
 				</Column>
 				<Column
 					hAlign="Right" >
-					<header><Label text="Price" /></header>
+					<header><Label text="{i18n>LineItemPrice}" /></header>
 				</Column>
 			</columns>
 			<ColumnListItem

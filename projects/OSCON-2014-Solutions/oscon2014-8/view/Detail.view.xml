@@ -39,12 +39,12 @@
 					<form:SimpleForm
 						id="SupplierForm"
 						minWidth="1024" >
-						<core:Title text="Address" />
-						<Label text="Name"/>
+						<core:Title text="{i18n>PartnerAddress}" />
+						<Label text="{i18n>PartnerName}"/>
 						<Text text="{CompanyName}" />
-						<Label text="City"/>
+						<Label text="{i18n>PartnerCity}"/>
 						<Text text="{City}, {PostalCode}" />
-						<Label text="Street"/>
+						<Label text="{i18n>PartnerStreet}"/>
 						<Text text="{Street}" />
 					</form:SimpleForm>
 				</IconTabFilter>
