@@ -138,5 +138,3 @@ server like this:
 
 and your browser should open showing your local OpenUI5 SDK. You're
 all set!
-
-Now you can jump right into the tutorial, which is located inside the repository in `projects/OSCON-2014-Solutions/OSCON2014-Exercises.docx`
