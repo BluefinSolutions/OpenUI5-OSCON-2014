@@ -8,10 +8,6 @@ sap.ui.controller("oscon2014.view.Detail", {
 		this.nav.back("Master");
 	},
 
-	onBeforeRendering:function(){
-		this.byId("SupplierForm").bindElement("BusinessPartner");
-	},
-	
 	handleApprove : function (evt) {
 
 		// show confirmation dialog
@@ -26,7 +22,7 @@ sap.ui.controller("oscon2014.view.Detail", {
 					// TODO call proper service method and update model (not part of this session)
 				}
 			},
-			
+
 			bundle.getText("ApproveDialogTitle")
 		);
 	}
