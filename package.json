@@ -1,4 +1,5 @@
-{  
+{ 
+  "repository" : "https://github.com/BluefinSolutions/OpenUI5-OSCON-2014", 
   "dependencies" : {  
     "express" : "3.x",  
     "open" : "0.0.x"
