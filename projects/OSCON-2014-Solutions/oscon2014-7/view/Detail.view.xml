@@ -38,7 +38,6 @@
 				<IconTabFilter
 					icon="sap-icon://supplier">
 					<form:SimpleForm
-						id="SupplierForm"
 						binding="{BusinessPartner}"
 						minWidth="1024" >
 						<core:Title text="{i18n>PartnerAddress}" />
